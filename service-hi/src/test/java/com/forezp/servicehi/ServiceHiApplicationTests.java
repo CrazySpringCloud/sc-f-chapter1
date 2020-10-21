@@ -1,13 +1,13 @@
 package com.forezp.servicehi;
 
-//import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class ServiceHiApplicationTests {
 
-	/*@Test
+	@Test
 	void contextLoads() {
-	}*/
+	}
 
 }

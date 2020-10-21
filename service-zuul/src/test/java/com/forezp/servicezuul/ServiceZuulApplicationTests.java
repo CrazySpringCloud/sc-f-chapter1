@@ -1,10 +1,10 @@
-package com.forezp.servicefeign;
+package com.forezp.servicezuul;
 
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ServiceFeignApplicationTests {
+class ServiceZuulApplicationTests {
 
 	@Test
 	void contextLoads() {

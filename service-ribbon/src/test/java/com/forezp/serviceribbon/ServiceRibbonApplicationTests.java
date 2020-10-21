@@ -1,13 +1,13 @@
 package com.forezp.serviceribbon;
 
-//import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class ServiceRibbonApplicationTests {
 
-	/*@Test
+	@Test
 	void contextLoads() {
-	}*/
+	}
 
 }
