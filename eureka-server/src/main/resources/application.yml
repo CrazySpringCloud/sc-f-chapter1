@@ -1,13 +1,25 @@
 server:
   port: 8761
 eureka:
-  instance:
-    hostname: localhost
   client:
+    # 表示是否注册到Eureka服务器,因为自身作为服务注册中心，所以为false
     register-with-eureka: false
+    # 是否从eureka上获取注册信息,值为false表明自己是一个server
     fetch-registry: false
     service-url:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      # 原来的写法：http://${eureka.instance.hostname}:${server.port}/eureka/
+      # 这里如果用多实例：
+      # 既可以写成同一个服务器的不同端口，就像下面这样
+      # 也可以写成不同服务器的同一个端口，just like：http://ip1:8761/eureka/,http://ip2:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/,http://localhost:8768/eureka/
+  instance:
+    # hostname: localhost
+    # 使用prefer-ip-address这个配置项是为了取代【修改服务器的host文件这种方式】
+    # 如果不使用这个配置项，则需要在服务器的host文件中增加
+    # 127.0.0.1 peer1
+    # 127.0.0.1 peer2
+    # 不然eureka-server无法启动
+    prefer-ip-address: true
 spring:
   application:
     name: eureka-server
